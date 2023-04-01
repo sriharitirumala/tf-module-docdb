@@ -38,7 +38,7 @@ resource "aws_ssm_parameter" "docdb_url_catalogue" {
 }
 
 resource "aws_ssm_parameter" "docdb_url_user" {
-  name  = "${var.env}.docdb.catalogue"
+  name  = "${var.env}.docdb.user"
   type  = "String"
   value = "mongodb://${data.aws_ssm_parameter.user.value}:${data.aws_ssm_parameter.pass.value}@dev-docdb.cluster-cbvsbeoyxek4.us-east-1.docdb.amazonaws.com:27017/users?tls=true&replicaSet=rs0&readPreference=secondaryPreferred&retryWrites=false"
 }
